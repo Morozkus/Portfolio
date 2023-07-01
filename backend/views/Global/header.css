@@ -1,0 +1,23 @@
+@import url(./header_styles/nav.css);
+@import url(./header_styles/logo.css);
+
+.header__container {
+    justify-content: space-between;
+    align-items: center;
+
+    flex-direction: column;
+}
+
+.nav {
+    width: 100%;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav__item_font-size {
+    font-size: 2rem;
+    font-weight: bold;
+}
