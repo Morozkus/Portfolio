@@ -17,6 +17,10 @@
     justify-content: space-around;
 }
 
+.nav__item_cursor {
+    cursor: pointer;
+}
+
 .nav__item_font-size {
     font-size: 2rem;
     font-weight: bold;

@@ -15,6 +15,7 @@
 
 .card {
     width: 100%;
+    height: auto;
 }
 
 .card_display {
@@ -24,7 +25,8 @@
 }
 
 .card__img-container {
-    height: auto;
+    max-height: 250px;
+    height: 100%;
     width: 100%;
     grid-column: 1 / 3;
 }
