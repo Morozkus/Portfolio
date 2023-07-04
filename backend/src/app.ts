@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 
 import renderHandler from './handlers/renderHandler.js';
 import basicRouter from './routers/router.js';
+import CatalogRouter from './routers/CatalogRouter.js';
 
 const handlebars = expressHandlebars.create({
     defaultLayout: 'main',
@@ -23,6 +24,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.static('views'))
 
 app.use('/', basicRouter);
+app.use('/', CatalogRouter)
 
 app.use(function (req, res) {
     renderHandler(res, 404, './error/error.hbs', {title: 'Page Not Found', href: 'error'})

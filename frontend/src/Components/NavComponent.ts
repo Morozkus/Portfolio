@@ -10,8 +10,8 @@ export default class NavComponent {
         this.viewNavElement = new CreateElement({tag: 'nav', className: ['header__nav', 'nav']})
         this.catalogs = ['Проекты', 'Книги']
         this.links = [
-            [['Верстка', 'test'], ['Javascript/TypeScript', '/']],
-            [['Верстка', 'test'], ['Javascript/TypeScript', '/'], ['React', '/']]
+            [['Верстка', '/project/html'], ['Javascript/TypeScript', '/project/javascript']],
+            [['Верстка', '/books/html'], ['Javascript/TypeScript', '/books/javascript'], ['React', '/books/react']]
         ]
         this.viewNav()
     }

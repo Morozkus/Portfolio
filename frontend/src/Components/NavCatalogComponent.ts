@@ -17,7 +17,7 @@ export default class NavCatalogComponent implements INavCatalogComponent {
     }
 
     createFragmentLinks(links: [string, string][]): ICreateElement {
-        const fragment = new CreateElement({tag: 'div'})
+        const fragment = new CreateElement({tag: 'div', className: ['AREA__element', 'AREA__element_display']})
         const elementLinks: ICreateElement[] = links.map(el => {
             return new CreateElement({ tag: 'a', textContent: el[0], attribute: [['href', el[1]]] })
         })

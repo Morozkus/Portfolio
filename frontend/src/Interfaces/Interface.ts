@@ -32,3 +32,8 @@ export interface INavCatalogComponent {
     createFragmentLinks(links: link[]): ICreateElement
     insertFragment(fragment: ICreateElement): void
 }
+
+export interface ICard {
+    element: ICreateElement
+    insertCard(node: HTMLElement): void
+}
