@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express"
 import fs from 'fs'
 
-function getCatalog(catalog: string) {
+export function getCatalog(catalog: string) {
 
     return function checkRout(req: Request, res: Response, next: NextFunction): void {
 
@@ -19,6 +19,20 @@ function getCatalog(catalog: string) {
     }
 }
 
+export function getCard(catalog: string) {
+
+    return function checkRout(req: Request, res: Response, next: NextFunction): void {
 
 
-export default getCatalog
+        const filePath: string = `./views/${catalog}/${req.params.catalog}/${req.params.card}.hbs`
+
+        fs.access(filePath, fs.constants.F_OK, (err) => {
+            if (err) {
+                console.log(err.message);
+                
+                return res.redirect('/err')
+            }
+            next()
+        });
+    }
+}

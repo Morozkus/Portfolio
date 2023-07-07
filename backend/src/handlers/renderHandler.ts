@@ -1,6 +1,7 @@
 interface TOptions {
     title: string,
-    href: string
+    href: string,
+    leftPanel?: boolean
 }
 
 type TRenderHandler = (res: any, status: number, view: string, options: TOptions) => void
