@@ -11,7 +11,7 @@ export default class NavComponent {
         this.catalogs = ['Проекты', 'Книги']
         this.links = [
             [['Верстка', '/project/html'], ['Javascript/TypeScript', '/project/javascript']],
-            [['Верстка', '/books/html'], ['Javascript/TypeScript', '/books/javascript'], ['React', '/books/react']]
+            [['Программирование', '/books/prog'], ['Другие', '/books/other']]
         ]
         this.viewNav()
     }

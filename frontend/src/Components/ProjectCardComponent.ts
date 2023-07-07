@@ -1,6 +1,5 @@
 import CreateElement from "./../createsElement/CreateElement.js";
 import Card from "./../createsElement/Card.js";
-import { ICreateElement } from './../Interfaces/Interface.js'
 
 type Options = {
     imgSrc: string | undefined,
@@ -23,11 +22,20 @@ export default class ProjectCardComponent extends Card {
     }
 
     createCard(): HTMLElement {
-        const imgLink = new CreateElement<HTMLLinkElement>({tag: 'a', className: ['card__img-container'], attribute: [['style', 'background-color: lightGray;'], ['target', '_blank']]})
-        const img = new CreateElement<HTMLImageElement>({ tag: 'img', className: ['card__img', 'card__img-container', 'card__item_border'], attribute: [['src', this.options.imgSrc !== undefined ? this.options.imgSrc : '#']] })
+        const imgLink = new CreateElement<HTMLLinkElement>({
+            tag: 'a',
+            className: ['card__img-container'],
+            attribute: [['style', 'background-color: lightGray;'], ['target', '_blank']]
+        })
+        const img = new CreateElement<HTMLImageElement>({
+            tag: 'img',
+            className: ['card__img', 'card__img-container', 'card__item_border'],
+            attribute: [['src', this.options.imgSrc !== undefined ? this.options.imgSrc : '#']]
+        })
+
         if (this.options.imgLink) {
             imgLink.setAttribute([['href', this.options.imgLink]])
-            
+
         } else {
             img.setAttribute([['style', 'opacity: 0.9; cursor: not-allowed;']])
         }
@@ -35,8 +43,16 @@ export default class ProjectCardComponent extends Card {
         imgLink.addInnerElement(img)
 
 
-        const ghContainer = new CreateElement<HTMLDivElement>({ tag: 'div', className: ['card__github-link', 'card__item', 'card__item_border'] })
-        const ghLink = new CreateElement<HTMLLinkElement>({ tag: 'a', className: ['card__link'], textContent: 'GitHub', attribute: [['target', '_blank']] })
+        const ghContainer = new CreateElement<HTMLDivElement>({
+            tag: 'div',
+            className: ['card__github-link', 'card__item', 'card__item_border']
+        })
+        const ghLink = new CreateElement<HTMLLinkElement>({
+            tag: 'a',
+            className: ['card__link'],
+            textContent: 'GitHub',
+            attribute: [['target', '_blank']]
+        })
         if (this.options.GHLink) {
 
             ghLink.setAttribute([['href', this.options.GHLink]])
@@ -57,7 +73,7 @@ export default class ProjectCardComponent extends Card {
 
             prLink.setAttribute([['style', 'opacity: 0.5; cursor: not-allowed;']])
         }
-       
+
         projectContainer.addInnerElement(prLink)
 
         this.getHtmlElement().append(imgLink.getElement(), ghContainer.getElement(), projectContainer.getElement())
